@@ -1,17 +1,28 @@
-let nombre: string = string(prompt("Ingrese nombre"));
-let notaPractica: number = Number(prompt("Ingrese la nota parte practica"));
-let notaPoblemas: number = Number(prompt("Ingrese nota parte Problemas"));
-let notaTeoria: number = Number(prompt("Ingrese nota Teoria"));
+let nombre: string = prompt("Ingrese nombre");
+let notaPractica: number;
+let notaProblemas: number;
+let notaTeoria: number;
+let notaResultado: number;
 
-let notaResultado: number = 0 < 10;
+while (nombre !== "") {
+  notaPractica = Number(prompt("Ingrese la nota parte practica"));
+  notaProblemas = Number(prompt("Ingrese nota parte Problemas"));
+  notaTeoria = Number(prompt("Ingrese nota Teoria"));
 
-if (nombre !== "") {
-  while ((notaPractica, notaPoblemas, notaTeoria <= 10)) {
-    notaResultado =
-      Number(notaPractica * 0.1) + notaPoblemas * 0.5 + notaTeoria * 0.4;
-    console.log("La nota final es", notaResultado);
-    break;
+  if (
+    notaPractica >= 0 &&
+    notaPractica <= 10 &&
+    notaProblemas >= 0 &&
+    notaProblemas <= 10 &&
+    notaTeoria >= 0 &&
+    notaTeoria <= 10
+  ) {
+    notaResultado = notaPractica * 0.1 + notaProblemas * 0.5 + notaTeoria * 0.4;
+    console.log("NOTA RESULTADO DEL ALUMNO ", nombre, " ES ", notaResultado);
+  } else {
+    console.log("ERROR ALGUNA DE LAS NOTAS ES INVALIDA");
   }
-} else {
-  console.log("Error en el ingreso de datos");
+  nombre = prompt("Ingrese nombre");
 }
+
+console.log("FIN DEL CODIGO");
